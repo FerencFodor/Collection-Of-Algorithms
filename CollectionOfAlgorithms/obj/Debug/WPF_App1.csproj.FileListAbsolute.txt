@@ -1,0 +1,17 @@
+D:\Dev\Rider\WPF_App1\WPF_App1\bin\Debug\WPF_App1.exe.config
+D:\Dev\Rider\WPF_App1\WPF_App1\bin\Debug\WPF_App1.exe
+D:\Dev\Rider\WPF_App1\WPF_App1\bin\Debug\WPF_App1.pdb
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\WPF_App1.csprojAssemblyReference.cache
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\MainWindow.g.cs
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\App.g.cs
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\WPF_App1_MarkupCompile.cache
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\WPF_App1_MarkupCompile.lref
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\MainWindow.baml
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\WPF_App1.g.resources
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\WPF_App1.Properties.Resources.resources
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\WPF_App1.csproj.GenerateResource.cache
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\WPF_App1.csproj.CoreCompileInputs.cache
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\WPF_App1.exe
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\WPF_App1.pdb
+D:\Dev\Rider\WPF_App1\WPF_App1\bin\Debug\System.Drawing.Common.dll
+D:\Dev\Rider\WPF_App1\WPF_App1\obj\Debug\WPF_App1.csproj.CopyComplete

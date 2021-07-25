@@ -1,0 +1,270 @@
+﻿<Window x:Class="WPF_App1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_App1"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        ResizeMode="NoResize"
+        Title="MainWindow" Width="528" Height="420">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="26" />
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0" VerticalAlignment="Stretch" Name="Tabs">
+            
+            <TabItem Header="Mandelbrot">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Border BorderBrush="Black"
+                            BorderThickness="1"
+                            Grid.Column="0"
+                            Grid.Row="0">
+                        <Image Name="MandelbrotImage" Width="300" Height="300" MaxHeight="300" MaxWidth="300" />
+                    </Border>
+
+                    <Border BorderThickness="1"
+                            BorderBrush="LightGray"
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Margin="5,0,0,0">
+
+                        <StackPanel>
+                            <Label Content="Resolution"/>
+                            <TextBox Name="ManSize" 
+                                     Margin="5,0,5,2"
+                                     Text="10"
+                                     PreviewTextInput="NumberValidation"
+                                     LostFocus="ManOnLostFocus"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Button Name="ManGenerate" Content="Generate" Grid.Column="0" Margin="5,2" Click="ManOnGenerateClick"/>
+                            </Grid>
+                            
+                            <Border BorderThickness="1"
+                                BorderBrush="LightGray"
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                Margin="5,2">
+                                <StackPanel>
+                                    <Label Content="High Resolution Save"/>
+                                    <TextBox Name="ManHighRes" 
+                                             Margin="5,0,5,2"
+                                             Text="1024"
+                                             PreviewTextInput="NumberValidation"
+                                             LostFocus="ManOnHiResLostFocus"/>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Name="ManHiResSave" Content="Save" Grid.Column="0" Margin="5,2" Click="ManOnSaveClick"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="Cellular automaton" TabIndex="2">
+                <Grid Margin="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Border BorderBrush="Black"
+                            BorderThickness="1"
+                            Grid.Column="0"
+                            Grid.Row="0">
+                        <Image Name="CellularImage" Width="300" Height="300" MaxHeight="300" MaxWidth="300" />
+                    </Border>
+                    <Border BorderThickness="1"
+                            BorderBrush="LightGray"
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Margin="5,0,0,0">
+
+                        <StackPanel>
+                            <Label>Grid Size</Label>
+                            <TextBox Name="TbSize"
+                                     Margin="5,0"
+                                     PreviewTextInput="NumberValidation"
+                                     LostFocus="CAOnLostFocus">
+                                10
+                            </TextBox>
+                            <Border BorderBrush="LightGray"
+                                    BorderThickness="1"
+                                    Margin="2">
+
+                                <StackPanel Orientation="Vertical">
+                                    <Label>Type 1 probability</Label>
+                                    <TextBox
+                                        Name="TbType1"
+                                        Margin="5,2"
+                                        PreviewTextInput="NumberValidation">
+                                        0
+                                    </TextBox>
+                                    <Label>Type 2 probability</Label>
+                                    <TextBox Name="TbType2"
+                                             Margin="5,2"
+                                             PreviewTextInput="NumberValidation">
+                                        0
+                                    </TextBox>
+                                    <Label>Type 3 probability</Label>
+                                    <TextBox Name="TbType3"
+                                             Margin="5,2"
+                                             PreviewTextInput="NumberValidation">
+                                        0
+                                    </TextBox>
+                                    <Label>Empty probability</Label>
+                                    <TextBox Name="TbType4"
+                                             Margin="5,2"
+                                             PreviewTextInput="NumberValidation">
+                                        0
+                                    </TextBox>
+                                </StackPanel>
+
+                            </Border>
+
+                            <DockPanel>
+                                <CheckBox Name="GridCheckBox" Margin="5,2" Click="CAOnShowGridClick" IsChecked="True">Show Grid</CheckBox>
+                                <CheckBox Name="RefineCheckBox" Margin="5,2" Click="CAOnAutoRefineClick"
+                                          IsChecked="False">
+                                    Auto Refine
+                                </CheckBox>
+                            </DockPanel>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Name="GenerateButton" Grid.Column="0" Margin="5,2" Click="CAOnGenerateClick">Generate</Button>
+                                <Button Name="RefineButton" Grid.Column="1" Margin="5,2" Click="CAOnRefineClick">Refine</Button>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Pattern Graph">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Border BorderBrush="Black"
+                            BorderThickness="1"
+                            Grid.Column="0"
+                            Grid.Row="0">
+                        <Image Name="RepetitionImage" Width="300" Height="300" MaxHeight="300" MaxWidth="300" />
+                    </Border>
+
+                    <Border BorderThickness="1"
+                            BorderBrush="LightGray"
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Margin="5,0,0,0">
+
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Top">
+                                <TextBox Name="RgTbFile" LostFocus="RGOnLostFocus" Margin="5,5" />
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Button Name="RgBrowse" Grid.Column="0" Click="RGOnBrowseClick" Margin="5,2">Browse</Button>
+                                    <Button Name="RgGenerate" Grid.Column="1" Click="RGOnGenerateClick" Margin="5, 2">Generate</Button>
+                                </Grid>
+                                <DockPanel>
+                                    <CheckBox Name="RgShowGrid" IsChecked="True" Click="RGOnShowGridClick"
+                                              DockPanel.Dock="Left" Margin="5,2">
+                                        Show Grid
+                                    </CheckBox>
+                                    <CheckBox Name="RgDarkMode" IsChecked="False" Click="RGOnDarkModeClick"
+                                              DockPanel.Dock="Right" Margin="5,2">
+                                        Dark Mode
+                                    </CheckBox>
+                                </DockPanel>
+                            </StackPanel>
+                            <Border DockPanel.Dock="Bottom"
+                                    BorderBrush="DarkGray"
+                                    BorderThickness="1"
+                                    Margin="5,2,5,5">
+                                <ScrollViewer HorizontalScrollBarVisibility="Auto" Height="220">
+                                    <TextBlock Name="RgFileContent" Background="LightGray" TextWrapping="Wrap" />
+                                </ScrollViewer>
+                            </Border>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="About">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" DockPanel.Dock="Top">Created by Ferenc Fodor (2021)</Label>
+
+                    <Label Grid.Row="0" Grid.Column="1">Algorithms</Label>
+
+                    <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black"
+                            BorderThickness="1"
+                            Margin="5,2">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <TextBlock Name="AbTbAlgorithm" />
+                        </ScrollViewer>
+                    </Border>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+        <StatusBar Grid.Row="1">
+            <StatusBarItem>
+                <TextBlock Name="TbStatusBar" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

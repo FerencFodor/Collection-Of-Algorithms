@@ -1,0 +1,17 @@
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\bin\Debug\AlgorythmCollection.exe.config
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\bin\Debug\AlgorythmCollection.exe
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\bin\Debug\AlgorythmCollection.pdb
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\bin\Debug\System.Drawing.Common.dll
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\AlgorythmCollection.csprojAssemblyReference.cache
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\MainWindow.g.cs
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\App.g.cs
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\AlgorythmCollection_MarkupCompile.cache
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\AlgorythmCollection_MarkupCompile.lref
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\MainWindow.baml
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\AlgorythmCollection.g.resources
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\WPF_App1.Properties.Resources.resources
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\AlgorythmCollection.csproj.GenerateResource.cache
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\AlgorythmCollection.csproj.CoreCompileInputs.cache
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\AlgorythmCollection.csproj.CopyComplete
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\AlgorythmCollection.exe
+D:\Dev\Rider\WPF_App1\AlgorythmCollection\obj\Debug\AlgorythmCollection.pdb

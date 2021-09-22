@@ -403,7 +403,7 @@ namespace WPF_App1
             _window.TbStatusBar.Text = "Processing";
             
             var hiResSize = int.Parse(_window.ManHighRes.Text);
-            var image = await Mandelbrot.Generate(hiResSize);
+            var image = await Mandelbrot.Generate();
             
             image.Save(dialog.FileName, ImageFormat.Bmp);
             

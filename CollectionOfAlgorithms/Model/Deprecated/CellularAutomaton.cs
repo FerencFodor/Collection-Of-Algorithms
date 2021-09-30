@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using Color = System.Drawing.Color;
 
-namespace WPF_App1
+namespace WPF_App1.Model
 {
     public class CellularAutomaton
     {
-        private const int Width = 300;
-        private const int Height = 300;
-
+        public int Width { get; set; }
+        public int Height { get; set; }
+        
+        public List<int> Probabilities { get; set; }
+        
         private readonly Bitmap _bitmap;
         private readonly Graphics _gr;
         private int[] _indices;
@@ -19,19 +22,9 @@ namespace WPF_App1
 
         public int Size { get; set; }
         public bool ShowGrid { get; set; }
-        public bool AutoRefine { get; set; }
-
-        public CellularAutomaton(int size, bool showGrid)
+        public CellularAutomaton()
         {
-            Size = size;
-            ShowGrid = showGrid;
-
-            _bitmap = new Bitmap(Width, Height);
-
-            _gr = default;
-            _gr = Graphics.FromImage(_bitmap);
-
-
+            
             _colors = new List<Color>
             {
                 Color.White,

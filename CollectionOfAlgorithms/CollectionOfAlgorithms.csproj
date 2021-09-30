@@ -58,27 +58,38 @@
         <Reference Include="PresentationFramework" />
     </ItemGroup>
     <ItemGroup>
-        <ApplicationDefinition Include="App.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </ApplicationDefinition>
-        <Compile Include="ColorConverter.cs" />
-        <Compile Include="Mandelbrot.cs" />
-        <Compile Include="RepetitionGraph.cs" />
-        <Page Include="MainWindow.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </Page>
         <Compile Include="App.xaml.cs">
-            <DependentUpon>App.xaml</DependentUpon>
-            <SubType>Code</SubType>
+          <DependentUpon>App.xaml</DependentUpon>
+          <SubType>Code</SubType>
         </Compile>
-        <Compile Include="CellularAutomaton.cs" />
-        <Compile Include="ImageControl.cs" />
         <Compile Include="MainWindow.xaml.cs">
-            <DependentUpon>MainWindow.xaml</DependentUpon>
-            <SubType>Code</SubType>
+          <DependentUpon>MainWindow.xaml</DependentUpon>
+          <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Model\CellularModel.cs" />
+        <Compile Include="Model\Deprecated\CellularAutomaton.cs" />
+        <Compile Include="Model\Deprecated\ColorConverter.cs" />
+        <Compile Include="Model\Deprecated\ImageControl.cs" />
+        <Compile Include="Model\Deprecated\Mandelbrot.cs" />
+        <Compile Include="Model\Deprecated\RepetitionGraph.cs" />
+        <Compile Include="ViewModel\CellularViewModel.cs" />
+        <Compile Include="ViewModel\Misc.cs" />
+        <Compile Include="View\UserControls\CellularAutomatonUserControl.xaml.cs">
+          <DependentUpon>CellularAutomatonUserControl.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="View\UserControls\MandelbrotUserControl.xaml.cs">
+          <DependentUpon>MandelbrotUserControl.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="View\UserControls\RepetitionGraphUserControl.xaml.cs">
+          <DependentUpon>RepetitionGraphUserControl.xaml</DependentUpon>
+        </Compile>
+        <Page Include="MainWindow.xaml">
+          <Generator>MSBuild:Compile</Generator>
+          <SubType>Designer</SubType>
+        </Page>
+        <Page Include="View\UserControls\CellularAutomatonUserControl.xaml" />
+        <Page Include="View\UserControls\MandelbrotUserControl.xaml" />
+        <Page Include="View\UserControls\RepetitionGraphUserControl.xaml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs">
@@ -97,6 +108,12 @@
     <ItemGroup>
         <None Include="App.config" />
         <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <ApplicationDefinition Include="App.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <SubType>Designer</SubType>
+      </ApplicationDefinition>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
